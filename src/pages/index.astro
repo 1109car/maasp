@@ -1,0 +1,191 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Experiencias from "../components/Experiencias.astro";
+const claseHijo = "mi-clase-especial";
+---
+
+<Layout title="Portafolio | Carlos Rojas">
+  <header>
+    <div><img src="../../public/proyecto/carlosdos.jpeg" alt="" /></div>
+    <h1>Carlos Rojas</h1>
+    <small>Front-end Developer</small>
+  </header>
+  <main>
+    <Card
+      clase={claseHijo}
+      src="../../public/proyecto/chat.png"
+      title="Chat Bidireccional"
+      body="Proyecto con Node Y socket.io (por concluir)"
+	  href="https://github.com/1109car/chatsocket/tree/main/src"
+	  />
+    <Card
+      clase=""
+      src="../../public/proyecto/GPT.png"
+      title="Consumiendo IA"
+      body="Consumiendo una IA usando Js y workes.js."
+      href="https://1109car.github.io/chatIA/"
+	  />
+    <Card
+      clase="prestamos"
+      src="../../public/proyecto/carros.png"
+      title="Credito Vehicular"
+      body="prestamos con java, React y MY SQL"
+      href="https://github.com/1109car/prestamos"
+    />
+    <Card
+      src="../../public/proyecto/cafe.png"
+      title="Landin Page"
+      body="Creacion de portada de una cafeteria virtual"
+      clase="cafe"
+      href="https://1109car.github.io/github_carlos/"
+    />
+    <Card
+      clase=""
+      src="../../public/proyecto/javasc.png"
+      title="Encriptador"
+      body="Ejercicio con Oracle y Alura latam"
+      href="https://1109car.github.io/proyecto_alura/"
+    />
+    <Card
+      clase="cafesu"
+      src="../../public/proyecto/cafesu.png"
+      title="Empresa cafetera"
+      body="Empresa de cafe con bootstrap"
+      href="https://1109car.github.io/empresacafe/t2arquitecuraWeb/index.html"
+    />
+    <Card
+      src="../../public/proyecto/ecommers.png"
+      title="Ecommers"
+      body="Pagina de ventas y compras de ropa "
+      clase="ecommers"
+      href="https://1109car.github.io/ecommers/E-Commerse/index.html"
+    />
+    <Card
+      src="../../public/proyecto/starWar.png"
+      title="Api Star War"
+      body="Filtrando informacion de una api"
+      clase="starWar"
+      href="https://1109car.github.io/Star-War/practicando/index.html"
+    />
+  </main>
+  <div class="main__segundo">
+    <Experiencias
+      title="Proyectos Frenlace"
+      bodyUno="Creacion de un proyecto para un grupo de univirsitarios de la UPC"
+      bodyDos="Proyecto de una pagina web para un cliente "
+    />
+    <Experiencias
+      title="Creacion de Base de Datos"
+      bodyUno="Modelo y diseño con sql server para tienda de registro de ropa y usuarios"
+      bodyDos="Api con My sql "
+    />
+  </div>
+  <footer>
+    <span>Desarrollado con Astro</span>
+    <small>@Carlos rojas</small>
+    <img class="tiktok" src="../../public/proyecto/tiktok.png" alt="" />
+  </footer>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 900px;
+    min-height: 100dvh;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+    display: grid;
+    grid-template-columns: 35% 35%;
+    gap: 10px;
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 30vh;
+    margin-bottom: 2%;
+    margin-top: 5%;
+  }
+  header div {
+    width: 4%;
+    height: 40%;
+    border-radius: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+    border: solid 1px #fff;
+    opacity: 0.9;
+  }
+  header div img {
+    border-radius: 50%;
+    margin: auto;
+    width: auto;
+    height: 100%;
+    /* border: solid red 2px; */
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+    color: #fff;
+  }
+
+  small {
+    color: #fff;
+  }
+  .main__segundo {
+    display: flex;
+    width: auto;
+    min-height: 50dvh;
+    margin-top: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 3%;
+    gap: 20px;
+  }
+
+  footer {
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+    border: solid rgb(132, 131, 131) 1px;
+    height: 8dvh;
+    padding: 2%;
+  }
+  span {
+    color: #fff;
+    font-size: 0.7rem;
+  }
+  .tiktok {
+    background-color: #fff;
+    width: 2%;
+  }
+  @media (max-width: 768px) {
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: auto;
+      margin-left: auto;
+      width: auto;
+      height: auto;
+    }
+    .main__segundo {
+      display: flex;
+      margin-right: auto;
+      flex-wrap: wrap;
+      width: auto;
+      height: auto;
+      margin-bottom: 5%;
+    }
+  }
+</style>

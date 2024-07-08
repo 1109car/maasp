@@ -1,0 +1,128 @@
+---
+interface Props {
+	title: string;
+	body: string;
+	src: string;
+	clase?:string;
+	href:string
+}
+
+const { src, title, body, clase,href } = Astro.props;
+
+
+---
+
+<div class={clase}>
+	<span>
+		<h3>{title}</h3>
+	<p>{body}</p>
+	</span>
+	<figure >
+		<img src={src} alt="">
+	</figure>
+	<a href={href}></a>
+</div>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	div{
+		overflow: hidden;
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	    padding: 5%;
+        /* border: solid rgb(240, 238, 238) 1px; */
+		gap: 10px;
+	}
+	figure{
+		position: absolute;
+		width: 50%;
+		z-index: 1;
+		right: 5%;
+		display: flex;
+		align-items: center;
+		opacity: 0.8;
+	}
+	figure img{
+		transition: 0.5s linear;
+		width: 100%;
+		-webkit-mask-image: radial-gradient(circle at top left, transparent 20%, black 100%);
+		mask-image: radial-gradient(circle at top left, transparent 20%, black 100%);
+		border-radius: 3px;
+	}
+	.mi-clase-especial{
+		position: relative;
+		background-color: #258fac;
+        height: auto;
+	}
+	.prestamos{
+		background-color: rgb(86, 102, 97);
+	}
+    .cafe{
+		background-color: rgb(154, 127, 92)
+	}
+	.cafesu{
+		background-color: rgb(60, 128, 69);
+	}
+	.ecommers{
+		background-color: #738489;
+	}
+	.starWar{
+		background-color: rgb(69, 69, 148);
+	}
+	div:hover{
+		transition: 2s;
+		overflow: hidden;
+		img{
+			transition: 0.5s linear;
+			position: absolute;
+			transform: scale(1.5);
+		}
+		span{
+			transition: 0.5s linear;
+			margin-left: 10%;
+			position: relative;
+			transform: translateX(-50%);
+		}
+	}
+	h3{
+       font-weight: 700;
+	   font-size: 1rem;	
+	   margin-bottom: 3%;
+	   opacity: 0.9;
+	}
+	p{
+		font-size: 0.8rem;
+		z-index: 4;
+		font-weight: 500;
+		font-family: sans-serif;
+		color: #fff ;
+		opacity: 0.9;
+	}
+	span{
+		transition: 0.5s linear;
+		width: 60%;
+		z-index: 4;
+	}
+	a{
+		position: absolute;
+		z-index: 50;
+        width: 100%;
+		height: 100%;
+		left:0;
+	}
+	@media (max-width: 768px) {
+		div{
+			
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			min-height: 100%;
+			
+		}
+	}
+</style>
